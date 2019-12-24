@@ -1,0 +1,70 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  color: #647787;
+  background-color: #e5e5e5;
+  line-height: 1.4;
+  font-size: 1.4rem;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: 0;
+  line-height: inherit;
+}
+
+.container,
+.container--full-width {
+  margin: 0 auto;
+  width: 100%;
+  font-size: 1em;
+}
+
+.container {
+  max-width: 1440px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.container--full-width {
+  padding-left: 4.2rem;
+  padding-right: 4.2rem;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+ol,
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
