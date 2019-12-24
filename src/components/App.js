@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import Header from './Header';
 
 const StyledApp = styled.div`
   .Header {
     width: 100%;
-    height: 80px;
     position: fixed;
     top: 0;
     left: 0;
@@ -15,7 +15,7 @@ const StyledApp = styled.div`
 
   .Nav {
     position: fixed;
-    top: 80px;
+    top: 75px;
     left: 0;
     z-index: 1;
     width: 260px;
@@ -25,7 +25,7 @@ const StyledApp = styled.div`
 
   .Content {
     margin-left: 260px;
-    margin-top: 80px;
+    margin-top: 75px;
     height: 2000px;
   }
 `;
@@ -33,7 +33,9 @@ const StyledApp = styled.div`
 const App = () => {
   return (
     <StyledApp>
-      <div className="Header">THE HEADER</div>
+      <div className="Header">
+        <Header />
+      </div>
       <div className="Nav">NAVIGATION</div>
       <div className="Content">MAIN CONTENT</div>
     </StyledApp>
