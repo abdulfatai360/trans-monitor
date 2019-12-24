@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Header from './Header';
 import Nav from './Nav';
+import ContentArea from './ContentArea';
 
 const StyledApp = styled.div`
   .Header {
@@ -19,15 +20,16 @@ const StyledApp = styled.div`
     top: 75px;
     left: 0;
     z-index: 1;
-    width: 300px;
+    width: 30rem;
     height: 100%;
     background-color: #fff;
   }
 
-  .Content {
-    margin-left: 300px;
+  .ContentArea {
+    margin-left: 30rem;
     margin-top: 75px;
-    height: 2000px;
+    padding: 3.5rem;
+    min-height: calc(100vh - 80px);
   }
 `;
 
@@ -40,7 +42,9 @@ const App = () => {
       <div className="Nav">
         <Nav />
       </div>
-      <div className="Content">MAIN CONTENT</div>
+      <div className="ContentArea">
+        <ContentArea />
+      </div>
     </StyledApp>
   );
 };
