@@ -4,6 +4,12 @@ html {
   overflow-x: hidden;
 }
 
+@media (min-width: 2560px) {
+  html {
+    font-size: 81.25%;
+  }
+}
+
 html,
 body {
   width: 100%;
