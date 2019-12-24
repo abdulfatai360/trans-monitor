@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from './Header';
+import Nav from './Nav';
 
 const StyledApp = styled.div`
   .Header {
@@ -18,13 +19,13 @@ const StyledApp = styled.div`
     top: 75px;
     left: 0;
     z-index: 1;
-    width: 260px;
+    width: 300px;
     height: 100%;
     background-color: #fff;
   }
 
   .Content {
-    margin-left: 260px;
+    margin-left: 300px;
     margin-top: 75px;
     height: 2000px;
   }
@@ -36,7 +37,9 @@ const App = () => {
       <div className="Header">
         <Header />
       </div>
-      <div className="Nav">NAVIGATION</div>
+      <div className="Nav">
+        <Nav />
+      </div>
       <div className="Content">MAIN CONTENT</div>
     </StyledApp>
   );

@@ -69,3 +69,8 @@ ul {
   margin: 0;
   list-style-type: none;
 }
+
+h1,
+h2 {
+  font-weight: normal;
+}
