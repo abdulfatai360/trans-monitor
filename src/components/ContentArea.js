@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import TransactionInfo from './commons/TransactionInfo';
 import OrderDetails from './OrderDetails';
+import PaymentHistory from './PaymentHistory';
 import { transactionData } from '../data/transactionData';
 
 const StyledContentArea = styled.div`
@@ -16,7 +17,7 @@ const StyledContentArea = styled.div`
   .TotalTransactionVolume,
   .TotalTransactionValue,
   .OrdersDetails,
-  .PaymentsTable {
+  .PaymentHistory {
     height: 200px;
   } */
 
@@ -45,7 +46,7 @@ const StyledContentArea = styled.div`
     grid-row: 2;
   }
 
-  .PaymentsTable {
+  .PaymentHistory {
     grid-column: 1 / -1;
     grid-row: 3;
   }
@@ -69,7 +70,9 @@ const ContentArea = () => {
       <div className="OrdersDetails">
         <OrderDetails />
       </div>
-      <div className="PaymentsTable"></div>
+      <div className="PaymentHistory">
+        <PaymentHistory />
+      </div>
     </StyledContentArea>
   );
 };
