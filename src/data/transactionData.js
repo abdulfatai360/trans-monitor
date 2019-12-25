@@ -13,22 +13,22 @@ const generateDataset = () => {
 export const transactionData = [
   {
     title: 'Daily Transaction Volume',
-    value: 2342,
+    value: '2,342',
     dataset: generateDataset(),
   },
   {
     title: 'Daily Transaction Value',
-    value: 4000000,
+    value: '₦4,000,000',
     dataset: generateDataset(),
   },
   {
     title: 'Total Transaction Volume',
-    value: 452000,
+    value: '452,000',
     dataset: generateDataset(),
   },
   {
     title: 'Total Transaction Value',
-    value: 4000000,
+    value: '₦4,000,000',
     dataset: generateDataset(),
   },
 ];
