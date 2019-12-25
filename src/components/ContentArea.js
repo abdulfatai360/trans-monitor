@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import TransactionInfo from './commons/TransactionInfo';
+import OrderDetails from './OrderDetails';
 import { transactionData } from '../data/transactionData';
 
 const StyledContentArea = styled.div`
@@ -65,7 +66,9 @@ const ContentArea = () => {
       <div className="TotalTransactionValue">
         <TransactionInfo data={transactionData[3]} />
       </div>
-      <div className="OrdersDetails"></div>
+      <div className="OrdersDetails">
+        <OrderDetails />
+      </div>
       <div className="PaymentsTable"></div>
     </StyledContentArea>
   );
