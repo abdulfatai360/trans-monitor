@@ -1,5 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import {
+  Overview,
+  ManualSettlement,
+  MerchantProfile,
+  AllOrders,
+  PendingOrders,
+  ReconcilledOrders,
+  AllPayments,
+  ReconcilledPayments,
+  UnreconcilledPayments,
+} from '../assets/Icons';
 
 const StyledNav = styled.div`
   padding: 4.3rem 0;
@@ -21,6 +32,11 @@ const StyledNav = styled.div`
       background-color: #0d9446;
       cursor: pointer;
     }
+  }
+
+  .Icons {
+    margin-right: 1.5rem;
+    vertical-align: middle;
   }
 
   .PrimaryNav {
@@ -92,28 +108,75 @@ const Nav = () => {
         <h2 className="PrimaryNav__Header">Main</h2>
 
         <ul className="PrimaryNav__List">
-          <li className="PrimaryNav__Item Overview">Overview</li>
+          <li className="PrimaryNav__Item Overview">
+            <span className="Icons">
+              <Overview />
+            </span>
+            Overview
+          </li>
 
           <li className="PrimaryNav__Item Payments">
             Payments
             <ul>
-              <li>All Payments</li>
-              <li>Reconcilled Payments</li>
-              <li>Un - Reconcilled Payments</li>
-              <li>Manual Settlement</li>
+              <li>
+                <span className="Icons">
+                  <AllPayments />
+                </span>
+                All Payments
+              </li>
+              <li>
+                <span className="Icons">
+                  <ReconcilledPayments />
+                </span>
+                Reconcilled Payments
+              </li>
+              <li>
+                <span className="Icons">
+                  <UnreconcilledPayments />
+                </span>
+                Un - Reconcilled Payments
+              </li>
+              <li>
+                <span className="Icons">
+                  <ManualSettlement />
+                </span>
+                Manual Settlement
+              </li>
             </ul>
           </li>
 
           <li className="PrimaryNav__Item Orders">
             Orders
             <ul>
-              <li>All Orders</li>
-              <li>Pending Orders</li>
-              <li>Reconcilled Orders</li>
+              <li>
+                <span className="Icons">
+                  <AllOrders />
+                </span>
+                All Orders
+              </li>
+              <li>
+                <span className="Icons">
+                  {' '}
+                  <PendingOrders />
+                </span>
+                Pending Orders
+              </li>
+              <li>
+                <span className="Icons">
+                  {' '}
+                  <ReconcilledOrders />
+                </span>
+                Reconcilled Orders
+              </li>
             </ul>
           </li>
 
-          <li className="PrimaryNav__Item MerchantProfile">Merchant Profile</li>
+          <li className="PrimaryNav__Item MerchantProfile">
+            <span className="Icons">
+              <MerchantProfile />
+            </span>
+            Merchant Profile
+          </li>
         </ul>
       </section>
     </StyledNav>

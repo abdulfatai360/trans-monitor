@@ -2,13 +2,13 @@ import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
 import styled from 'styled-components';
 import { orderData as dataset } from '../data/orderData';
+import { summary } from '../data/summary';
 
 const StyledOrderDetails = styled.div`
   display: flex;
 
   .Chart,
-  .Info__Orders,
-  .Info__Payments {
+  .Info > div {
     border: 1px solid #eef8fd;
     border-radius: 2px;
     background-color: #fff;
@@ -74,8 +74,7 @@ const StyledOrderDetails = styled.div`
     flex-grow: 1;
   }
 
-  .Info__Orders,
-  .Info__Payments {
+  .Info > div {
     margin-left: 1rem;
     padding: 3rem 2.5rem;
     padding-right: 4rem;
@@ -85,13 +84,18 @@ const StyledOrderDetails = styled.div`
       color: #262626;
       font-weight: bold;
       margin-bottom: 2rem;
+      text-transform: capitalize;
     }
 
     .Indicator {
       width: 100%;
       height: 4px;
-      background-color: steelblue;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
+
+      span {
+        display: inline-block;
+        height: 100%;
+      }
     }
 
     p {
@@ -101,7 +105,7 @@ const StyledOrderDetails = styled.div`
     }
   }
 
-  .Info__Orders {
+  .Info > div:first-of-type {
     margin-bottom: 1rem;
   }
 `;
@@ -195,21 +199,43 @@ const OrderDetails = () => {
       </div>
 
       <div className="Info">
-        <div className="Info__Orders">
-          <h2 className="Info__Orders__Title">Orders</h2>
-          <div className="Indicator"></div>
-          <p>Pending Orders: 20</p>
-          <p>Reconcilled Orders: 80</p>
-          <p>Total Orders: 100</p>
-        </div>
-
-        <div className="Info__Payments">
-          <h2 className="Info__Payments__Title">Payments</h2>
-          <div className="Indicator"></div>
-          <p>Un-reconcilled Payments: 20</p>
-          <p>Reconcilled Payments: 80</p>
-          <p>Total Payments: 100</p>
-        </div>
+        {summary.map((data, idx) => (
+          <div key={idx}>
+            <h2>{data.title}</h2>
+            <div className="Indicator">
+              <span
+                style={{
+                  width: `calc(${data.reconcilledOrders} / ${data.totalOrders} * 100%) `,
+                  backgroundColor: data.reconcilledColor,
+                }}
+              ></span>
+              <span
+                style={{
+                  width: `calc(${data.pendingOrders} / ${data.totalOrders} * 100%) `,
+                  backgroundColor: data.pendingColor,
+                }}
+              ></span>
+            </div>
+            <p>
+              Pending Orders:{' '}
+              <span style={{ color: data.pendingColor, fontWeight: 'bold' }}>
+                {data.pendingOrders}
+              </span>
+            </p>
+            <p>
+              Reconcilled Orders:{' '}
+              <span
+                style={{ color: data.reconcilledColor, fontWeight: 'bold' }}
+              >
+                {data.reconcilledOrders}
+              </span>
+            </p>
+            <p>
+              Total Orders:{' '}
+              <span style={{ fontWeight: 'bold' }}>{data.totalOrders}</span>
+            </p>
+          </div>
+        ))}
       </div>
     </StyledOrderDetails>
   );
