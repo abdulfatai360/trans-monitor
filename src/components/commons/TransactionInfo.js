@@ -18,7 +18,7 @@ const StyledTransactionInfo = styled.section`
 
   .Info__Value {
     margin: 0;
-    font-size: 1.2em;
+    font-size: 1.4em;
     color: #262626;
     flex-grow: 1;
   }
@@ -91,7 +91,7 @@ const drawChart = (svgElement, dataset) => {
   SVGElement.append('path')
     .attr('d', area(dataset))
     .attr('stroke', '#0294ff')
-    .attr('stroke-width', 1)
+    .attr('stroke-width', 0.5)
     .attr('fill', 'url(#areaGradient)');
 };
 
